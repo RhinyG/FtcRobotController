@@ -1,11 +1,16 @@
 package org.firstinspires.ftc.teamcode.robotParts.movement.Bezier;
 
-public class pathBuilder {
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+
+public class PathBuilder {
+    public PathFollower myOpMode;
     private double Bx = 0, By = 0, dBx = 0, dBy = 0, d2Bx = 0, d2By = 0;
     private double pow = 0, dpow = 0, d2pow = 0;
     private double[] path_coordinate = {}, path_derivative = {}, path_sec_derivative = {};
     public double[][] coordinate = {{}}, derivative = {{}}, sec_derivative = {{}};
     public double[] r_circle = {};
+
+    public PathBuilder(PathFollower opmode) {myOpMode = opmode;}
 
     public void buildPath(double[][] controlPoints) {
         int n = controlPoints.length;
