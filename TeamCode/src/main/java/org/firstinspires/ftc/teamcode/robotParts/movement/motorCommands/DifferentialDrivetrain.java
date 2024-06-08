@@ -165,7 +165,7 @@ public class DifferentialDrivetrain extends RobotPart {
     }
 
     //TODO: motor power algorithm based off auton
-    
+
     public void runOpMode() throws InterruptedException {
 
     }

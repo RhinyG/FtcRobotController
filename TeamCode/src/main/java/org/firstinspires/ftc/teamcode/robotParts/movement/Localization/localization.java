@@ -1,14 +1,15 @@
 package org.firstinspires.ftc.teamcode.robotParts.movement.Localization;
 
+import com.arcrobotics.ftclib.hardware.motors.Motor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.IMU;
 
 public class localization {
     public DcMotorEx leftOdo,rightOdo,backOdo;
     final double[]
-            L = {-7.2, 12.1},
-            R = {-7.2,-12.1},
-            B = {-16, 0};
+            L = {-2.6, 16.5},
+            R = {-2.6,-8},
+            B = {17, -2.5};
     final double
             WHEEL_RADIUS = 48,//in millimeters, this is for the odometry wheels
             GEAR_RATIO = 1/13.7,
@@ -49,9 +50,9 @@ public class localization {
         oldRPos = currentRPos;
         oldBPos = currentBPos;
 
-        currentLPos = -leftOdo.getCurrentPosition();
-        currentRPos = rightOdo.getCurrentPosition();
-        currentBPos = backOdo.getCurrentPosition();
+        currentLPos = leftOdo.getCurrentPosition();
+        currentRPos = -rightOdo.getCurrentPosition();
+        currentBPos = -backOdo.getCurrentPosition();
 
         dR = (currentRPos - oldRPos) / ticksPerCM;
         dL = (currentLPos - oldLPos) / ticksPerCM;
